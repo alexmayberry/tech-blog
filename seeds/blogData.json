@@ -1,17 +1,23 @@
 [
   {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-    "needed_funding": 5000
+    "id": 1,
+    "title": "I don't like music",
+    "content": "Since I was a little kid really, I have never had much of an interest in music. I never had a favorite band, a favorite genre, fav song, etc. For a short time when I was 17-20ish I did get into punk music, went to a few concerts/events, but I was still never the type to have music playing when I was alone. In fact, I can't think of a single time I have ever just turned on the radio/player for some music while I was sitting at home or on the computer. I don't own an iPod or anything similar, and I have no intention of ever getting anything like that. My last 3 cell phones have all had a built-in MP3 player, but I have never put a single song on them. Literally the only time I ever have music playing around me is when I'm driving a car, only then because the only other option is complete silence, which can get a little boring. I only listen to a rap radio station because it's catchy and I don't care enough to bring a cd or mp3 player with me. Whenever people ask me \"What sort of music do you listen to?\" and I reply \"I don't listen to music\" they look at me like I have two heads. Am I all alone reddit? Is anyone else out there a silence-o-phile?",
+    "user_id": 1,
+    "date_created": "2022-09-25 10:15:00"
   },
   {
-    "name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-    "needed_funding": 10000
+    "id": 2,
+    "title": "I smell like cheese and I don't know why",
+    "content": "As title says. I made a ghee and it was good for a couple of months but I noticed a mold in it, and that it started to smell like awesome cheese! Does my ghee turning into quasi-cheese mean that I didn't strain it well enough when I made it from butter?",
+    "user_id": 2,
+    "date_created": "2022-09-25 10:16:00"
   },
   {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-    "needed_funding": 800
+    "id": 3,
+    "title": "My cats tounge is so rough",
+    "content": "So I grew up with cats and I'm used to their cute little sandpaper tongues but the kitty I have now has the sharpest cat tongue I've ever encountered, she's 10 months old and I've had her since she was 6 weeks and it's been like that ever since she was little. I can handle her licking my hand but if she licks my arm or my face it hurts. I tried to Google but didn't see anything so I thought I'd ask here. Any one else ever had a cat with a super sharp tongue? Could it be like, overactive keratin or something? My boyfriend has also confirmed that she has a particularly sharp tongue so it's not just me who thinks so.",
+    "user_id": 3,
+    "date_created": "2022-09-25 10:17:00"
   }
 ]

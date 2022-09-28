@@ -1,17 +1,56 @@
 [
   {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-    "needed_funding": 5000
+    "content": "I hate you for this.",
+    "date_created": "2022-09-25 10:17:00",
+    "user_id": 2,
+    "blog_id": 1
   },
   {
-    "name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-    "needed_funding": 10000
+    "content": "WHYYYYYYYY",
+    "date_created": "2022-09-25 10:16:00",
+    "user_id": 3,
+    "blog_id": 1
   },
   {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-    "needed_funding": 800
+    "content": "GFYS I don't need to love music",
+    "date_created": "2022-09-25 10:24:00",
+    "user_id": 1,
+    "blog_id": 1
+  },
+  {
+    "content": "I'm confused, do you smell like cheese or Ghee?",
+    "date_created": "2022-09-25 10:17:00",
+    "user_id": 1,
+    "blog_id": 2
+  },
+  {
+    "content": "Ghee wiz take a shower man",
+    "date_created": "2022-09-25 10:16:00",
+    "user_id": 3,
+    "blog_id": 2
+  },
+  {
+    "content": "It's actually a condition. pls don't hate.",
+    "date_created": "2022-09-25 10:24:00",
+    "user_id": 2,
+    "blog_id": 2
+  },
+  {
+    "content": "More of a dog tongue person.",
+    "date_created": "2022-09-25 10:17:00",
+    "user_id": 1,
+    "blog_id": 3
+  },
+  {
+    "content": "do cat's taste?",
+    "date_created": "2022-09-25 10:16:00",
+    "user_id": 2,
+    "blog_id": 3
+  },
+  {
+    "content": "Very sad now",
+    "date_created": "2022-09-25 10:24:00",
+    "user_id": 3,
+    "blog_id": 3
   }
 ]
