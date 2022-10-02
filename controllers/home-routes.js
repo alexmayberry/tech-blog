@@ -1,36 +1,26 @@
 const router = require('express').Router();
 const { User, Blog, Comment } = require('../models');
-const { withAuth, withNoAuth } = require('../utils/auth');
+const { withAuth} = require('../utils/auth');
 const { Op } = require('sequelize');
 
-// Route "/"
 
 // Route "/login"
 
-router.get('/', withAuth, async (req, res) => {
+// Route "/"
+router.get('/', async (req, res) => {
   try {
-    const where = {
-      user_id: req.session.user_id,
-    };
+    // const blogData = await Blog.findAll({
+    //   include: [{
+    //     model: User,
+    //     attributes: ['id', 'username'],
+    //   }]
+    // });
 
-    const blogData = await Blog.findAll({
-      where,
-      include: [{
-        model: User,
-        attributes: ['id', 'username'],
-      },
-        {
-          model: Comment
-        }
-      ]
-    });
+    // const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-    const blogs = blogData.map((blog) => blog.get({ plain: true }));
+    res.send("I'm Alive!");
 
-    res.render('homepage', {
-      blogs,
-      logged_in: req.session.logged_in,
-    });
+    // res.render('homepage', { blogs });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -53,11 +43,11 @@ router.get('/dashboard', withAuth, async (req, res) => {
   });
 });
 
-// Route "/blogs/new"
+// POST Route "/blogs/new"
 
-// Route "/blogs/edit/:id"
+// PUT Route "/blogs/edit/:id"
 
-// Route "/blogs/:id"
+// GET Route "/blogs/:id"
 router.get('/blogs/:id', withAuth, (req, res) => {
   try {
     const blogData = Blog.findByPk(req.params.id, {
