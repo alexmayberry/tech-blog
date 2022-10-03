@@ -1,0 +1,8 @@
+.icon svg {
+    display: inline-block;
+    width: auto;
+    height: 1em;
+}
+.icon svg * {
+    fill: currentColor
+}
