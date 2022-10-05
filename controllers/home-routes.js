@@ -2,8 +2,6 @@ const router = require('express').Router();
 const { User, Blog, Comment } = require('../models');
 const { withAuth } = require('../utils/auth');
 
-// Route "/login"
-
 // Route "/"
 router.get('/', async (req, res) => {
   console.log("HOME ROUTE")
@@ -19,20 +17,24 @@ router.get('/', async (req, res) => {
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
     console.log(blogs);
 
-    // res.send("I'm Alive!");
-
-    res.render('homepage', { blogs });
+    res.render('homepage', { 
+      blogs,
+      logged_in: req.session.logged_in, 
+    });
   } catch (err) {
     console.log(err)
     res.status(500).json(err);
   }
 });
 
-router.get('/dashboard',  async (req, res) => {
+router.get('/dashboard', withAuth,  async (req, res) => {
   const userData = await User.findByPk(req.session.user_id, {
-    attributes: ['id', 'username'],
+    attributes: ['id', 'name'],
     include: Blog,
   });
+
+  console.log(req.session.user_id);
+  console.log(userData);
 
   const user = userData.toJSON();
 
@@ -49,19 +51,22 @@ router.get('/dashboard',  async (req, res) => {
 // PUT Route "/blogs/edit/:id"
 
 // GET Route "/blogs/:id"
-router.get('/blogs/:id',  (req, res) => {
+router.get('/blogs/:id',  async (req, res) => {
   try {
-    const blogData = Blog.findByPk(req.params.id, {
+    const blogData = await Blog.findByPk(req.params.id, {
       include: [
-        { model: User, attributes: ['id', 'username'] },
-        { model: Comment },
+        { model: User, 
+        //  attributes: ['id', 'name'] 
+        },
+        { model: Comment, include: {model: User}},
       ],
     });
 
-    const blogs = blogData.map((blog) => blog.get({ plain: true }));
+    const blog = blogData.get({ plain: true });
+    console.log(blog);
 
     res.render('single-blog', {
-      blogs,
+      blog,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

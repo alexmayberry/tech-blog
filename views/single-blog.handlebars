@@ -1,0 +1,16 @@
+<div class="row align-center mb-5">
+  <div class="col-md-6">
+    <h2> {{logged_in}}</h2>
+    <h2> {{blog.title}}</h2>
+    <p><span>{{blog.user.name}} </span>{{blog.date_created}}</p>
+    <p>{{blog.content}}</p>
+  </div>
+  <div>
+    <h2> Comments </h2>
+    {{#each blog.comments}}
+    <p data-id="{{user.id}}">{{user.name}}</p>
+    <p>Date: {{date_created}}</p>
+    <p>{{content}}</p>
+    {{/each}}
+  </div>
+</div>

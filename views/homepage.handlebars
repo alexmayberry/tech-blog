@@ -1,14 +1,14 @@
 {{#each blogs}}
 
 <div class="row align-center mb-5">
- <h2 data-id="{{id}}"> {{title}} </h2>
- <p>{{blog.content}}</p>
   <div class="col-md-6">
     <h2> {{user.name}}</h2>
   </div>
   <div class="col-md-6">
     <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
   </div>
-  <p>Date:{{blog.date_created}}</p>
+  <h2 data-id="{{id}}"> {{title}} </h2>
+  <p>{{content}}</p>
+  <p>Date: {{date_created}}</p>
 </div>
 {{/each}}
