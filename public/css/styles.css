@@ -1,8 +1,8 @@
-.icon svg {
-    display: inline-block;
-    width: auto;
-    height: 1em;
+body {
+    background-color: blue;
 }
-.icon svg * {
-    fill: currentColor
+
+#blog-container {
+    background-color: green;
+    color: aqua;
 }
