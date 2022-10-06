@@ -1,0 +1,10 @@
+<div id="blog-container">
+  {{#each user.blogs as |blog|}}
+  <div data-id="{{id}}"class="row align-center mb-5">
+    <h2 data-id="{{id}}"> {{title}} <span data-id="{{id}}">Date: {{date_created}}</span></h2>
+    <p data-id="{{id}}">{{content}}</p>
+  </div>
+  {{/each}}
+</div>
+
+<script src="/js/dashboard.js"></script>

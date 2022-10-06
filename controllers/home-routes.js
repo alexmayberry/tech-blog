@@ -49,6 +49,29 @@ router.get('/dashboard', withAuth,  async (req, res) => {
 // POST Route "/blogs/new"
 
 // PUT Route "/blogs/edit/:id"
+router.get('/blogs/:id/edit', withAuth, async (err, res, req, next) => {
+  try {
+    console.log("edit route called");
+    console.log(req.params.id);
+    const blogData = await Blog.findByPk(req.params.id, {
+      include: [
+        { model: User, 
+        //  attributes: ['id', 'name'] 
+        },
+        { model: Comment, include: {model: User}},
+      ],
+    });
+
+    const blog = blogData.get({ plain: true });
+    console.log(blog);
+
+    res.render('edit-blog', {
+      blog,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }})
 
 // GET Route "/blogs/:id"
 router.get('/blogs/:id',  async (req, res) => {
