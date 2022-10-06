@@ -7,7 +7,7 @@ document
     .addEventListener('click', (e) => {
         const id = e.target.dataset.id;
         console.log(id);
-        document.location.replace(`/blogs/${id}/edit`)
+        document.location.replace(`/blogs/edit/${id}`)
     });
 //eventListener
 // documen

@@ -49,7 +49,7 @@ router.get('/dashboard', withAuth,  async (req, res) => {
 // POST Route "/blogs/new"
 
 // PUT Route "/blogs/edit/:id"
-router.get('/blogs/:id/edit', withAuth, async (err, res, req, next) => {
+router.get('/blogs/edit/:id', withAuth, async (req, res) => {
   try {
     console.log("edit route called");
     console.log(req.params.id);
