@@ -8,4 +8,10 @@
   <h2 data-id="{{id}}"> {{title}} </h2>
   <p>{{content}}</p>
 </div>
+{{#each comments as |comment|}}
+<div>
+  <h4>{{user.name}} <span>{{date_created}}</span></h4>
+  <p>{{content}}</p>
+</div>
+{{/each}}
 {{/each}}
