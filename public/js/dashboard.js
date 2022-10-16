@@ -1,6 +1,6 @@
 // listen for click and store event target in variable
 // route user to edit view of clicked blog /blogs/:id/edit where id = clicked blogg
-console.log("dashboard.js connected!");
+console.log("dashboard.js is connected!");
 
 document
     .querySelector('#blog-container')

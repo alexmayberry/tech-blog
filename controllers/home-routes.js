@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Blog, Comment } = require('../models');
 const { withAuth } = require('../utils/auth');
+const editHandler = require('../public/js/edit')
 
 // Route "/"
 router.get('/', async (req, res) => {
@@ -52,11 +53,26 @@ router.get('/dashboard', withAuth,  async (req, res) => {
 });
 
 router.get('/login',  (req, res) => {
-  res.render('login');
+  let loginPage = false;
+  res.render('login', {
+    loginPage
+  });
 });
 
 router.get('/signup',  (req, res) => {
   res.render('signup');
+});
+
+// GET Route "/blogs/new" for new blog form
+router.get('/blogs/new', withAuth, (req, res) => {
+  try {
+    res.render('new-blog', {
+      layout: 'main',
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // PUT Route "/blogs/edit/:id"
@@ -75,6 +91,8 @@ router.get('/blogs/:id/edit', withAuth, async (req, res) => {
 
     const blog = blogData.get({ plain: true });
     console.log(blog);
+
+    editHandler
 
     res.render('edit-blog', {
       blog,
@@ -100,19 +118,6 @@ router.get('/blogs/:id',  async (req, res) => {
     console.log(blog);
 
     res.render('single-blog', {
-      blog,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// GET Route "/blogs/new" for new blog form
-router.get('/blogs/new',  async (req, res) => {
-  try {
-    const blog = "blog";
-    res.render('new-blog', {
       blog,
       logged_in: req.session.logged_in,
     });
